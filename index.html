@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f0">
+<meta name="color-scheme" content="light">
+<title>برنامه تغذیه | امیرحسین</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:oklch(97% .008 105);--surface:oklch(99% .004 105);--ink:oklch(25% .012 105);--muted:oklch(47% .012 105);--line:oklch(86% .013 105);--accent:oklch(43% .06 110);--soft:oklch(93% .024 110);--alert:oklch(94% .045 85);--alert-ink:oklch(36% .06 75);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Vazirmatn,Tahoma,Arial,sans-serif;font-size:16px;line-height:1.9;font-optical-sizing:auto}button,input,select{font:inherit}button,a,input,summary{-webkit-tap-highlight-color:transparent}button,a,summary{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-underline-offset:5px}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}h1,h2,h3,p{margin:0}h1,h2,h3{text-wrap:balance}p{max-width:72ch;text-wrap:pretty}button{min-height:44px}button:disabled{cursor:not-allowed;opacity:.5}[hidden]{display:none!important}.num,time,bdi{font-variant-numeric:tabular-nums}bdi,time{unicode-bidi:isolate}.hero{min-height:100vh;min-height:100svh;display:flex;justify-content:center;align-items:center;padding:64px 24px;position:relative}.hero-inner{width:100%;max-width:900px;text-align:center;animation:arrive .65s var(--ease) both}.date{font-size:.875rem;color:var(--muted);margin-bottom:32px}.hero h1{font-size:clamp(2rem,5.2vw,3.8rem);font-weight:600;line-height:1.65;letter-spacing:-.035em}.hero h1 .clockline{font-size:.58em;font-weight:400;letter-spacing:0;color:var(--muted);display:block;margin-bottom:8px}.hero h1 .actionline{display:block}.hero-note{color:var(--muted);margin:20px auto 0;font-size:1rem;max-width:58ch}.hero-note.alert{background:var(--alert);color:var(--alert-ink);border:1px solid oklch(80% .05 85);padding:16px 24px;border-radius:12px}.hero-note strong{display:block;margin-bottom:6px}.hero-controls{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.button{border:1px solid var(--line);padding:10px 22px;border-radius:8px;background:transparent;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:10px;font-weight:500;min-height:46px}.button.primary{background:var(--ink);border-color:var(--ink);color:var(--surface)}.button:hover{background:var(--soft)}.button.primary:hover{background:var(--accent);border-color:var(--accent)}.button:active{transform:translateY(1px)}.scroll-hint{position:absolute;bottom:24px;right:50%;transform:translateX(50%);font-size:.75rem;color:var(--muted);text-decoration:none;white-space:nowrap}.content{max-width:1060px;margin:auto;padding:0 28px 80px}.page-head{padding:56px 0 32px;border-top:1px solid var(--line);display:flex;gap:24px;justify-content:space-between;align-items:flex-end}.eyebrow{font-size:.75rem;color:var(--accent);margin-bottom:8px;font-weight:700}.page-head h2{font-size:2rem;font-weight:700}.meta{color:var(--muted);font-size:.875rem}.progress-wrap{min-width:180px;max-width:260px}.progress-label{font-size:.875rem;margin-bottom:8px}progress{width:100%;height:4px;display:block;accent-color:var(--accent);border:0;background:var(--line);border-radius:4px}progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress-value{background:var(--accent)}progress::-moz-progress-bar{background:var(--accent)}.utility{display:flex;gap:8px 24px;flex-wrap:wrap;margin-bottom:32px}.utility a{font-size:.875rem;padding:8px 0}.notice{padding:16px 20px;background:var(--alert);border:1px solid oklch(80% .05 85);color:var(--alert-ink);border-radius:8px;margin-bottom:24px}.instructions{font-size:.875rem;color:var(--muted);margin-bottom:28px}.meal{display:grid;grid-template-columns:190px minmax(0,1fr);gap:36px;border-top:1px solid var(--line);padding:32px 0 44px;scroll-margin-top:24px}.meal.current .meal-heading:before{content:'اکنون';display:inline-block;background:var(--soft);color:var(--accent);font-size:.75rem;padding:2px 12px;border-radius:20px;margin-bottom:12px}.meal-heading h3{font-size:1.5rem;font-weight:600;line-height:1.6}.meal-time{font-size:.875rem;color:var(--muted);margin-top:8px}.meal-status{font-size:.75rem;color:var(--accent);margin-top:12px}.common{font-size:.875rem;margin-bottom:16px;padding:12px 0;color:var(--muted)}.prerequisite .common{padding:16px;background:var(--alert);border:1px solid oklch(80% .05 85);color:var(--alert-ink);border-radius:8px}.options{list-style:none;margin:0;padding:0}.option{border-bottom:1px solid var(--line);position:relative;will-change:auto}.option:last-child{border-bottom:0}.option label{padding:18px 4px;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:16px;cursor:pointer;align-items:start}.option:hover{background:var(--soft)}input[type=checkbox]{width:21px;height:21px;margin:6px 0 0;accent-color:var(--accent);cursor:pointer;flex-shrink:0}.option-title{display:block;font-weight:600;margin-bottom:5px}.option-text{display:block;color:var(--muted);font-size:.875rem;line-height:2;max-width:70ch}.option.done .option-copy{opacity:.48;text-decoration:line-through;text-decoration-thickness:1px}.count{font-size:.75rem;color:var(--muted);white-space:nowrap;padding-top:6px;font-variant-numeric:tabular-nums}.option.done .count{color:var(--accent)}.after-meal{font-size:.875rem;color:var(--accent);padding:12px 4px}.section-title{font-size:2rem;margin:64px 0 20px}.settings{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}summary{cursor:pointer;min-height:44px;line-height:1.8;font-weight:600;padding:8px 0}details[open]>summary{margin-bottom:16px}.settings p{font-size:.875rem;color:var(--muted);margin:12px 0}.settings fieldset{border:0;padding:0;margin:24px 0}.settings legend{font-weight:600;margin-bottom:12px}.days{display:flex;gap:8px;flex-wrap:wrap}.day{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;min-height:44px;cursor:pointer}.day input{margin:0}.day:has(input:checked){background:var(--soft);border-color:var(--accent)}.time-fields{display:flex;flex-wrap:wrap;gap:20px 32px}.field{display:flex;flex-direction:column;gap:8px;min-width:160px}.field input{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:9px 12px;min-height:48px;color:var(--ink);max-width:240px;direction:ltr}.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:24px}.form-message{font-size:.875rem;color:var(--accent)}.search{width:100%;padding:14px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;min-height:48px;margin:12px 0 24px}.unit-group{border-top:1px solid var(--line);padding:12px 0}.unit-group summary{font-size:1.25rem}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.875rem}th,td{text-align:right;vertical-align:top;border-bottom:1px solid var(--line);padding:14px 12px;line-height:1.9}th{font-weight:600;background:var(--soft)}td:first-child{width:56%}.unit-note{font-size:.875rem;color:var(--muted);padding:16px 12px}.recommendations{border-top:1px solid var(--line);padding:20px 0}.recommendations summary{font-size:1.25rem}.recommendations ol{padding-inline-start:24px;margin:0;max-width:76ch}.recommendations li{padding:12px 8px;line-height:2}.source-note{font-size:.875rem;color:var(--muted);margin:24px 0}.source-note p{margin-bottom:12px}.footer{border-top:1px solid var(--line);padding-top:24px;margin-top:48px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.75rem;color:var(--muted)}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:12px 20px;border-radius:8px;z-index:10;width:max-content;max-width:calc(100% - 32px);font-size:.875rem;box-shadow:0 4px 20px oklch(25% .012 105 / .12)}.skip{position:fixed;top:8px;right:8px;background:var(--surface);padding:12px;z-index:20;transform:translateY(-160%)}.skip:focus{transform:translateY(0)}@keyframes arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){.hero{padding:56px 20px 80px}.date{margin-bottom:24px}.hero h1{letter-spacing:-.02em}.hero-note.alert{padding:14px 16px}.content{padding:0 20px 48px}.page-head{display:block;padding-top:36px}.progress-wrap{margin-top:24px;max-width:none}.meal{grid-template-columns:1fr;gap:16px;padding:24px 0 32px}.meal-heading{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap}.meal-heading h3{font-size:1.25rem}.meal.current .meal-heading:before{margin:0}.meal-time,.meal-status{margin:0}.option label{gap:12px;grid-template-columns:24px minmax(0,1fr)}.count{grid-column:2;padding:0;margin-top:-8px}.option-text{font-size:1rem;line-height:1.95}.section-title{font-size:1.5rem;margin-top:48px}.time-fields{gap:16px}.field{min-width:120px;flex:1}.field input{width:100%}th,td{padding:12px 8px}.page-head h2{font-size:1.5rem}.hero-controls .button{padding:10px 16px}.scroll-hint{bottom:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{.hero,.utility,.settings,.toast,.search,.form-actions,.skip,.footer button{display:none!important}.content{max-width:none;padding:0}.meal{break-inside:avoid;grid-template-columns:140px 1fr}.option.done .option-copy{opacity:1}.page-head{padding-top:0}.count{display:none}body{background:var(--surface)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#plan">رفتن به برنامه کامل</a>
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-inner">
+<p class="date" id="today"></p>
+<h1 id="hero-title"><span class="clockline">الان ساعت <time id="clock"></time> است.</span><span class="actionline" id="hero-action">برنامه امروزت را ببین.</span></h1>
+<p class="hero-note" id="hero-note"></p>
+<div class="hero-controls"><a class="button primary" id="current-link" href="#plan">دیدن وعده</a><a class="button" href="#plan">کل برنامه امروز</a></div>
+</div>
+<a class="scroll-hint" href="#plan">برنامه کامل، کمی پایین‌تر ↓</a>
+</section>
+<main class="content" id="plan">
+<header class="page-head"><div><p class="eyebrow">برنامه شخصی تغذیه</p><h2>امروز، وعده به وعده</h2><p class="meta">امیرحسین · تاریخ مراجعه: <bdi>۱۴۰۵/۶/۱۰</bdi></p></div><div class="progress-wrap"><p class="progress-label" id="progress-label"></p><progress id="progress" value="0" max="7" aria-label="وعده‌های ثبت‌شده امروز"></progress><button class="button reset-button" id="reset-day" type="button">ریست ثبت‌های امروز</button></div></header>
+<nav class="utility" aria-label="بخش‌های برنامه"><a href="#settings">روزهای باشگاه و ساعت‌ها</a><a href="#units">جدول واحدها</a><a href="#advice">توصیه‌های تغذیه‌ای</a></nav>
+<div class="notice" id="storage-warning" role="alert" hidden></div>
+<p class="instructions">برای هر وعده فقط یکی از منوها را انتخاب کن. تیک یعنی این گزینه را مصرف کرده‌ای؛ با برداشتن تیک، ثبت همان روز برمی‌گردد. با شروع روز جدید، ثبت‌های روز قبل خودکار جدا می‌شوند و عدد کنار هر گزینه تعداد دفعات ثبت آن در روزهای مختلف است.</p>
+<div id="meals"></div>
+<h2 class="section-title" id="settings">زمان‌بندی شخصی</h2>
+<details class="settings" id="settings-panel"><summary>روزهای باشگاه و ساعت‌های بدون زمان مشخص</summary>
+<p>ساعت وعده‌های اصلی از فایل گرفته شده و تغییر نمی‌کند. روزهای باشگاه، شروع و پایان تمرین و ساعت خواب در فایل مشخص نشده‌اند؛ برای یادآوری خودکار، آن‌ها را اینجا وارد کن. تا آن زمان هیچ ساعتی برایشان فرض نمی‌شود.</p>
+<form id="settings-form">
+<fieldset><legend>چه روزهایی باشگاه می‌روی؟</legend><div class="days" id="gym-days"></div></fieldset>
+<div class="time-fields"><label class="field">شروع تمرین<input type="time" id="gym-start" step="60"></label><label class="field">پایان تمرین<input type="time" id="gym-end" step="60"></label><label class="field">یادآوری پیش از خواب<input type="time" id="bedtime" step="60"></label></div>
+<p>اگر ساعت پایان از شروع کمتر باشد، پایان تمرین برای روز بعد در نظر گرفته می‌شود. ساعت «پیش از خواب» زمان یادآوری انتخابی توست، نه ساعت تجویزشده در فایل.</p>
+<div class="form-actions"><button class="button primary" type="submit">ذخیره زمان‌بندی</button><span class="form-message" id="settings-message" role="status"></span></div>
+</form></details>
+<section id="units" aria-labelledby="units-title"><h2 class="section-title" id="units-title">هر واحد، چقدر است؟</h2><p class="meta">اگر در رژیم مقدار یک ماده غذایی به صورت واحد نوشته شده، مقدارش را در جدول پیدا کن. طبق فایل، می‌توانی هر واحد را با مقدار هم‌اندازه و معادلش جایگزین کنی.</p><label for="unit-search" class="meta">جست‌وجو در نام غذا یا مقدار</label><input class="search" id="unit-search" type="search" autocomplete="off" aria-controls="unit-tables"><p id="search-status" class="meta" role="status" hidden></p><div id="unit-tables"></div></section>
+<section id="advice" aria-labelledby="advice-title"><h2 class="section-title" id="advice-title">توصیه‌های فایل تغذیه</h2><p class="meta">متن توصیه‌ها از فایل برنامه تغذیه منتقل شده است؛ مقادیر منوها را از بخش وعده‌ها دنبال کن.</p><details class="recommendations"><summary>همه توصیه‌ها برای افزایش وزن</summary><ol id="advice-list"></ol></details></section>
+<footer class="footer"><div><span id="save-status">اطلاعات فقط روی همین مرورگر ذخیره می‌شود.</span><br>همگام‌سازی بین دستگاه‌ها وجود ندارد. پاک‌کردن داده‌های مرورگر، سابقه را پاک می‌کند.<br>در حالت خصوصی یا اجرای مستقیم فایل، ماندگاری localStorage به مرورگر وابسته است. برای اطمینان، نسخه پشتیبان بگیر.</div><button class="button" id="export" type="button">دریافت نسخه پشتیبان</button></footer>
+</main>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p class="notice">برای نمایش برنامه، زمان‌بندی و ثبت وعده‌ها، جاوااسکریپت مرورگر باید روشن باشد.</p></noscript>
+<script>
+'use strict';
+const PRE='یک لیوان آب ولرم + دانه چیا یا خاکشیر یا تخم شربتی + مقدار کمی عسل + مقدار کمی آبلیمو + مقدار کم زنجبیل.';
+const BASE=[
+{id:'pre',title:'قبل از صبحانه',when:'پیش از صبحانه؛ بدون ساعت مشخص در فایل',relative:true,note:'قبل از صبحانه فراموش نشود. برای این دستور، فاصله زمانی عددی در نسخه تعیین نشده است.',options:[['نوشیدنی پیش از صبحانه',PRE]]},
+{id:'breakfast',title:'صبحانه',when:'ساعت ۸',start:480,end:480,options:[
+['نان، پنیر و مغزها','۳ کف دست نان + ۱٫۵ قوطی کبریت پنیر + ۱ واحد سبزیجات (۱ عدد گوجه‌فرنگی یا خیار سبز یا ۱ پیش‌دستی سبزی خوردن) + ۲ تا ۳ عدد گردو یا ۱۰ تا ۱۲ عدد بادام یا ۱۰ تا ۱۵ عدد پسته + نصف لیوان شیر کم‌چرب + ۱ قاشق مرباخوری عسل + مقداری پودر کاکائو، در صورت دوست نداشتن طعم شیر به‌تنهایی.'],
+['ارده و عسل','۲ تا ۳ قاشق غذاخوری ارده + ۱ قاشق غذاخوری عسل یا دوشاب یا شیره خرما + ۳ کف دست نان + ۱ واحد سبزیجات دلخواه + نصف لیوان شیر کم‌چرب.'],
+['عدسی','۲ لیوان عدسی + ۱ تا ۲ کف دست نان + ۱ واحد سبزی + نصف لیوان شیر یا ماست کم‌چرب.'],
+['تخم‌مرغ','۲ یا ۳ عدد تخم‌مرغ، با هر روشی که دوست داری + ۳ کف دست نان + نصف پیاله ماست + ۱ واحد سبزیجات دلخواه؛ گوجه یا قارچ یا فلفل دلمه را می‌توانی کنار تخم‌مرغ بپزی و مصرف کنی.'],
+['کره، خامه یا کره بادام‌زمینی','۲ تا ۳ قاشق مرباخوری کره حیوانی یا گیاهی، یا ۲ تا ۳ قاشق غذاخوری خامه، یا ۲ تا ۳ قاشق غذاخوری کره بادام‌زمینی + ۱ تا ۲ قاشق غذاخوری عسل یا دوشاب یا شیره خرما + در صورت دلخواه نصف موز + پودر مغزیجات به مقدار دلخواه.']
+]},
+{id:'morning',title:'میان‌وعده صبح',when:'۹ تا ۱۰:۳۰',start:540,end:630,options:[
+['شیک پروتئینی','یک پیاله مخلوط میکس‌شده شیک حاوی ماست میوه‌ای + میوه‌های دلخواه + پودر مغزیجات + پودر نارگیل + کره بادام‌زمینی + بستنی با طعم دلخواه + پودر شکلات در صورت دلخواه + عسل.'],
+['اوتمیل','یک پیاله مخلوط شیر + جو دوسر پرک + عسل + میوه دلخواه + ۲ تا ۳ عدد خرما.'],
+['میوه و کیک خانگی','۱ واحد میوه + ۱ تا ۲ تکه کیک یا کوکی خانگی.'],
+['شیربرنج','حاوی ۱ لیوان شیر کم‌چرب + ۳ تا ۴ قاشق غذاخوری سرصاف برنج + ۱ واحد میوه دلخواه + ۲ عدد خرما.']
+]},
+{id:'lunch',title:'ناهار',when:'۱۳ تا ۱۵',start:780,end:900,note:'همراه ثابت همه منوها: ۱ لیوان دوغ یا نصف لیوان ماست کم‌چرب.',options:[
+['قورمه‌سبزی یا قیمه','۲ ملاقه خورشت، حاوی ۴ تا ۵ تکه گوشت خورشتی + ۱۲ تا ۱۵ قاشق غذاخوری برنج + سبزی خوردن یا سالاد به مقدار دلخواه.'],
+['شامی یا کتلت','۲ عدد تخم‌مرغ + ۱٫۵ عدد سیب‌زمینی متوسط + ۶۰ گرم گوشت چرخ‌کرده + ۱۲ تا ۱۵ قاشق غذاخوری برنج.'],
+['زرشک‌پلو با مرغ، ماهی یا میگو','۱ عدد ران متوسط مرغ یا به همان اندازه سینه، یا ۲ تکه متوسط ماهی، یا ۱۰ عدد میگو + ۱۲ تا ۱۵ قاشق سرصاف برنج + سبزی خوردن به مقدار دلخواه؛ در صورت هوس کردن، ۷ تا ۸ خلال سیب‌زمینی.'],
+['استانبولی، ماکارونی یا عدس‌پلو','۱۵ تا ۲۰ قاشق عدس‌پلو یا استانبولی، یا ۳ لیوان ماکارونی + سالاد به اندازه دلخواه.']
+]},
+{id:'afternoon',title:'میان‌وعده عصر',when:'۱۶ تا ۱۸',start:960,end:1080,options:[
+['میوه، چای و بیسکویت','۱٫۵ واحد میوه دلخواه + چای + ۲ عدد بیسکویت.'],
+['حریره غلات','یک‌چهارم لیوان حریره غلات (در فایل: ۱/۴ لیوان) + ۱٫۵ واحد میوه دلخواه + چای + ۲ عدد خرما.'],
+['مغزها و شیر پروتئینی','۱۰ عدد بادام یا ۲۰ عدد پسته + ۱ واحد میوه + نصف لیوان شیر پروتئینی؛ می‌توانی از بیرون تهیه کنی یا در خانه با پودر پروتئین درست کنی.'],
+['نان تست و کره بادام‌زمینی','۲ عدد نان تست هفت‌غله یا ۴ عدد نان سیس رایس + ۱ تا ۲ قاشق غذاخوری کره بادام‌زمینی + ۱ عدد موز + ۲ عدد خرما.'],
+['آجیل و میوه','۱ پیاله آجیل + ۱ عدد میوه دلخواه + نصف لیوان شیر پروتئینی.']
+]},
+{id:'dinner',title:'شام',when:'۱۹ تا ۲۱',start:1140,end:1260,note:'همراه ثابت همه منوها: نصف لیوان ماست یا ۱ لیوان دوغ کم‌چرب.',options:[
+['کوکوسبزی','۲ تا ۳ عدد تخم‌مرغ + نصف لیوان سبزی پخته + ۳ تا ۴ واحد نان.'],
+['کوکو سیب‌زمینی','۲ تا ۳ عدد تخم‌مرغ + ۱٫۵ عدد سیب‌زمینی متوسط + ۳ کف دست نان + سبزی خوردن به مقدار دلخواه.'],
+['سوپ یا عدسی','۲ لیوان سوپ + ۲٫۵ واحد نان + سبزی خوردن به مقدار دلخواه. عنوان منو در فایل «سوپ یا عدسی» است و مقدار در متن برای سوپ نوشته شده است.'],
+['شامی، تاس‌کباب یا گوشت دیگر','۶۰ گرم گوشت (شامی یا تاس‌کباب یا هر گوشت دیگری مانند مرغ و ماهی) + ۱ عدد سیب‌زمینی متوسط + ۳ کف دست نان + سبزی خوردن به مقدار دلخواه.'],
+['آبگوشت','۲٫۵ لیوان آبگوشت حاوی ۶۰ گرم گوشت + ۱ عدد سیب‌زمینی + به اندازه نیاز نخود یا حبوبات + ۲ تا ۳ واحد نان.']
+]},
+{id:'bed',title:'میان‌وعده قبل خواب',when:'قبل از خواب؛ بدون ساعت مشخص در فایل',relative:true,options:[
+['میوه و ساندویچ کوچک','۱ عدد میوه دلخواه + ۱ ساندویچ کوچک پنیر و گردو یا کره بادام‌زمینی و موز.'],
+['میوه و آجیل یا برنجک','۱ عدد میوه دلخواه + ۱ پیاله آجیل یا برنجک + ۲ تا ۳ عدد خرما.'],
+['کماچ و میوه','به اندازه ۱ کف دست کماچ + ۱ عدد میوه.']
+]}
+];
+const GYM=[
+{id:'gympre',title:'قبل از باشگاه',when:'نیم ساعت قبل از شروع تمرین',note:'روز باشگاه، این وعده به برنامه روزانه اضافه می‌شود؛ جای وعده‌های اصلی را نمی‌گیرد.',options:[['قهوه و موز یا نان تست','۱ شات قهوه + ۱ عدد موز یا ۲ قاشق غذاخوری کره بادام‌زمینی همراه با نان تست هفت‌غله (پروتئینی).']]},
+{id:'gympost',title:'بعد از باشگاه',when:'نیم تا یک ساعت بعد از پایان تمرین',note:'فقط یکی از منوهای زیر را انتخاب کن؛ این وعده افزوده بر رژیم روزانه است.',options:[['تخم‌مرغ و سیب‌زمینی','۲ عدد تخم‌مرغ آب‌پز + ۱ عدد سیب‌زمینی متوسط پخته‌شده.'],['جوجه و سیب‌زمینی','۶۰ گرم جوجه + ۱ عدد سیب‌زمینی متوسط.'],['شیک پروتئین وی','۱ لیوان شیک پروتئین وی، حاوی ۱ ساشه یا ۱ اسکوپ پودر پروتئین وی + شیر + موز.']]}
+];
+const UNIT_GROUPS=[
+{title:'نان و غلات',rows:[['نان سنگک، بربری، تافتون','۱ کف دست (۳۰ گرم)'],['نان لواش','۴ کف دست'],['نان همبرگری','نصف نان (۳۰ گرم)'],['نان باگت','۱ برش ۷ سانتی‌متری (۳۰ گرم)'],['نان تست','۱٫۵ عدد (۳۰ گرم)'],['برنج پخته','۵ قاشق غذاخوری'],['ماکارونی پخته','نصف لیوان'],['ذرت پخته','نصف لیوان'],['سیب‌زمینی پخته','۱ عدد کوچک (۹۰ گرم)'],['انواع غلات پخته','نصف لیوان'],['بیسکویت ساده، نان سوخاری، کیک، شیرینی خشک','۳۰ گرم'],['ذرت بوداده','۳ لیوان'],['آرد غلات خشک یا جوانه گندم','۳ قاشق غذاخوری'],['نخود سبز یا باقلا سبز پخته','نصف لیوان'],['کدو حلوایی یا کدو تنبل','۱ لیوان'],['حبوبات پخته: عدس، نخود، انواع لوبیا، لپه، ماش و باقلا خشک','نصف لیوان']],note:'هر نصف لیوان حبوبات پخته معادل ۱ واحد از گروه غلات و ۱ واحد از گروه گوشت است.'},
+{title:'گوشت‌ها',rows:[['انواع گوشت قرمز، مرغ، ماهی و میگو، پخته یا سرخ‌شده','۱ قوطی کبریت (۳۰ گرم)'],['تن ماهی بدون روغن','۱٫۵ قاشق غذاخوری (۳۰ گرم)'],['دل، قلوه و جگر، پخته یا سرخ‌شده','۳۰ گرم'],['پنیر','۱ قوطی کبریت (۳۰ گرم)'],['تخم‌مرغ','۱ عدد'],['سفیده تخم‌مرغ','۲ عدد'],['سوسیس','۱ عدد کوچک'],['کالباس','۳۰ گرم'],['شیر سویا','۱ لیوان']]},
+{title:'شیر و لبنیات',rows:[['شیر','۱ لیوان'],['ماست','سه‌چهارم لیوان'],['دوغ','۲ لیوان'],['بستنی','نصف لیوان'],['کشک رقیق','۱۰ قاشق غذاخوری'],['کشک غلیظ','۴ قاشق غذاخوری']],note:'هر لیوان شیرکاکائو معادل ۱ واحد از گروه شیر و ۱ واحد از گروه نان و غلات است.'},
+{title:'سبزی‌ها',rows:[['سبزی خام: کاهو، انواع کلم، سبزی خوردن، سبزی خورشتی، سبزی آش، لوبیا سبز، پیاز، هویج، خیار، تره‌فرنگی، گوجه‌فرنگی، کرفس، اسفناج، بامیه، قارچ، فلفل، بادمجان، کدو، شلغم، چغندر و جوانه حبوبات','۱ لیوان'],['سبزی پخته','نصف لیوان'],['آب سبزی‌ها، مانند آب هویج یا آب گوجه‌فرنگی','نصف لیوان']]},
+{title:'میوه‌ها',rows:[['سیب، پرتقال، لیمو، هلو، شلیل','۱ عدد متوسط'],['موز','۱ عدد کوچک'],['گلابی، انار، گریپ‌فروت','نصف ۱ عدد بزرگ'],['انبه','نصف ۱ عدد کوچک'],['نارنگی، خرمالو، آلو تازه','۲ عدد متوسط'],['گیلاس، آلبالو','۱۲ عدد (۹۰ گرم)'],['انگور','۱۷ عدد (۹۰ گرم)'],['توت تازه','نصف لیوان'],['هندوانه، توت‌فرنگی','۱ لیوان + یک‌چهارم لیوان'],['خربزه، طالبی، گرمک، تمشک','۱ لیوان'],['زردآلو','۴ عدد'],['خرما، آلو خشک، ازگیل','۳ عدد'],['کشمش، توت خشک','۲ قاشق غذاخوری'],['آناناس تازه، شاتوت','سه‌چهارم لیوان'],['انجیر تازه یا خشک','۲ عدد متوسط'],['برگه زردآلو','۸ عدد'],['انواع کمپوت و آب میوه‌ها','نصف لیوان'],['آب انگور، آب آلو','یک‌سوم لیوان']]},
+{title:'چربی‌ها',rows:[['انواع روغن مایع یا جامد','۱ قاشق مرباخوری'],['کره','۱ قاشق مرباخوری'],['خامه','۲ قاشق غذاخوری سرصاف'],['پنیر خامه‌ای','۱ قاشق غذاخوری (۱۵ گرم)'],['سس مایونز معمولی','۱ قاشق مرباخوری'],['زیتون سیاه','۸ عدد'],['زیتون سبز','۱۰ عدد'],['کره بادام‌زمینی','۴ قاشق غذاخوری؛ توضیح متفاوت زیر جدول را بخوان'],['بادام','۶ عدد'],['گردو','۲ عدد'],['بادام‌زمینی','۱۰ عدد'],['پسته','۲۰ عدد'],['فندق','۵ عدد'],['بادام هندی','۴ عدد بزرگ'],['کنجد','۱ قاشق غذاخوری'],['مغز تخمه، مانند کدو و آفتابگردان','۱ قاشق غذاخوری'],['پودر نارگیل','۲ قاشق غذاخوری سرصاف']],note:'توضیح خود فایل: «۲ قاشق غذاخوری کره بادام‌زمینی معادل با ۱ واحد از گروه چربی‌ها و ۱ واحد از گروه گوشت‌ها است.» این مقدار با ردیف جدول متفاوت است؛ پیش از جایگزینی، از متخصص تغذیه بپرس.'},
+{title:'قندهای ساده',rows:[['شکر، مربا، عسل، ژله','۱ قاشق غذاخوری'],['قند','۵ حبه (۱۵ گرم)'],['نوشابه','نصف لیوان'],['بستنی یخی','۱ عدد'],['آب‌نبات','۳ عدد'],['ماءالشعیر','۱ لیوان']]},
+{title:'غذاهای آزاد',rows:[['آب، آب معدنی، آب لیمو، چای، قهوه، نوشابه‌های بدون قند، قندهای مصنوعی مخصوص بیماران دیابتی، آدامس، سرکه، پودر سیر، ادویه‌ها، سبزی‌های معطر خشک و سس گوجه‌فرنگی','طبق متن فایل: روزانه در حد متعادل']],note:'عنوان «آزاد» در فایل به معنای مصرف نامحدود نیست؛ خود فایل بر حد متعادل تأکید دارد.'}
+];
+const ADVICE=[
+'در منو، در صورت تمایل می‌توانی واحد شیر یا ماست خود را با میوه ترکیب و مصرف کنی.',
+'بلافاصله بعد از غذا ۱ عدد خرما بخور یا موادی مثل حلوا و نان خرمایی که حاوی خرما هستند مصرف کن. همراه غذا نان هم مصرف کن.',
+'تعداد وعده‌های غذایی روزانه را افزایش بده و حجم هر وعده را کمتر کن.',
+'در سالاد از روغن زیتون استفاده کن.',
+'برای افزایش اشتها، غذا را در بشقاب بزرگ‌تر بکش.',
+'برای مغذی کردن غذا از انواع حبوبات و سبزی‌ها در آن استفاده کن.',
+'برای طعم بهتر غذا و افزایش اشتها از ادویه‌های مختلف استفاده کن.',
+'مقدار کمی کره به غذا اضافه کن.',
+'هله‌هوله و تنقلاتی مثل پفک، چیپس، کیک، کلوچه و آبمیوه دارای قند، شکر و چربی‌های اشباع بالا و ضررهای زیادی هستند. باعث می‌شوند معده سریع پر شود و فرد در طول روز سیر بماند و وعده‌های اصلی و مواد مغذی ضروری و مفید را مصرف نکند؛ پس باید از مصرف آن‌ها پرهیز شود.',
+'در طول روز ۲ تا ۳ لیوان شیر و لبنیات پاستوریزه مصرف کن. می‌توانی شیر معمولی را با میوه‌هایی مثل توت‌فرنگی، موز، خرما و طالبی، مغزهایی مثل گردو، پسته و بادام و پودر نارگیل مخلوط کنی. در صورت عدم تحمل شیر، طبق فایل روزانه حداقل ۲ لیوان ماست مصرف شود.',
+'۲ تا ۳ قاشق غذاخوری جو دوسر پرک در شیر گرم بریز، عسل، پودر مغزیجات و میوه به آن اضافه کن و مصرف کن.',
+'برای مقوی کردن غذاها می‌توانی پودر جوانه غلات و حبوبات را به بعضی غذاها، به‌ویژه سوپ، اضافه کنی.',
+'پودر مغزهایی مانند گردو، بادام و پسته را به میوه‌ها، شیرموز، اسموتی، حریره‌های محلی، فرنی و شیربرنج اضافه کن.',
+'در میان‌وعده‌ها، روزی ۲ تا ۳ عدد میوه مصرف کن.',
+'کمی ماست پاستوریزه به میوه‌ها اضافه کن و به صورت ماست میوه‌ای مصرف کن.',
+'از سیب‌زمینی آب‌پز در انواع غذاها یا میان‌وعده‌ها استفاده کن.',
+'چربی‌ها باید به میزان کافی مصرف شوند. طبق فایل، بهترین روغن از گروه چربی‌ها روغن کلزا و کانولا است؛ از روغن و چربی جامد و روغن حیوانی خودداری کن و برای پخت غذا از روغن‌های گیاهی مایع استفاده کن. در همین توصیه آمده است که افراد لاغر می‌توانند جداگانه مقداری روغن زیتون یا کره روی سالاد یا برنج بریزند.',
+'میان‌وعده را از گروه‌های اصلی غذایی انتخاب کن: شیر پاستوریزه، به‌ویژه قبل خواب؛ ماست، میوه‌ها، ماست میوه خانگی، شیرموز، مخلوط مغزیجات و شیر و پودر نارگیل؛ سبزی‌ها مثل گوجه‌فرنگی، خیار، کاهو، هویج و ساقه کرفس؛ نان و پنیر کم‌نمک، خرما و میوه‌های خشک.',
+'مصرف نوشیدنی‌های خیلی شیرین مانند چای شیرین، شربت‌ها و آبمیوه صنعتی را کاهش بده.',
+'فست‌فود را از رژیم غذایی حذف کن؛ طبق فایل نهایتاً ماهی یک بار مصرف شود. مصرف غذاهای حاوی قند ساده و غذاهای پرچرب مثل چیپس، سیب‌زمینی سرخ‌شده و سس مایونز و موارد مشابه را کاهش بده.',
+'از منابع غذایی سلنیوم مانند تخم‌مرغ، مغزها و انواع گوشت استفاده کن. در فایل، کاهش استرس اکسیداتیو و التهاب و تقویت سیستم ایمنی بدن به عنوان اثر مصرف سلنیوم ذکر شده است.',
+'تنوع غذایی را رعایت کن و در برنامه روزانه از گروه‌های اصلی شامل نان و غلات، میوه‌ها، سبزی‌ها، شیر و لبنیات، گوشت و تخم‌مرغ، حبوبات و مغزها استفاده کن.',
+'روزانه به‌طور مرتب ۲ تا ۴ سهم میوه و ۳ تا ۵ سهم سبزی مصرف کن. مقدار میوه و سبزی نباید آن‌قدر باشد که اشتها را کاهش بدهد یا مشکل گوارشی ایجاد کند.',
+'برای تکمیل انرژی دریافتی از غذاهایی با تهیه آسان مثل فرنی، ماست و خیار حاوی کشمش و گردو، شیربرنج، پوره تخم‌مرغ و سیب‌زمینی و شله‌زرد استفاده کن.',
+'حداقل ۲ میان‌وعده در فاصله وعده‌های اصلی مصرف کن: ساندویچ نان و پنیر، نان و سیب‌زمینی، نان و تخم‌مرغ، نان و خرما، نان روغنی، بیسکویت ترجیحاً سبوس‌دار، نان شیرمال همراه با ۱ لیوان شیر و انواع میوه.',
+'از گروه نان و غلات مانند نان، برنج و ماکارونی به مقدار بیشتر استفاده کن. می‌توانی نان را همراه برنج، کوکو، تخم‌مرغ، خوراک لوبیا، عدسی و دیگر مواد غذایی مصرف کنی.',
+'حداقل ۲ بار در هفته ماهی مصرف کن.',
+'در صورت بی‌اشتهایی از چاشنی‌هایی مثل آب نارنج، لیموترش، آبغوره و سبزی‌های معطر برای تحریک اشتها استفاده کن.',
+'همراه غذا می‌توانی زیتون مصرف کنی.'
+];
+const $=id=>document.getElementById(id);
+const fa=new Intl.NumberFormat('fa-IR');
+const clockFormat=new Intl.DateTimeFormat('fa-IR',{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+const dateFormat=new Intl.DateTimeFormat('fa-IR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+const KEY='nutrition-momenpour-v1';
+const ALL=[...BASE,...GYM];
+const byId=Object.fromEntries(ALL.map(g=>[g.id,g]));
+let storageOK=true,corrupt=false,toastTimer,displayDay='',displayGroups=[],currentIDs=[];
+const fresh=()=>({version:1,days:{},prefs:{gymDays:[],gymStart:'',gymEnd:'',bedtime:''}});
+const validTime=s=>typeof s==='string'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(s);
+function normalize(raw){
+ if(!raw||raw.version!==1||!raw.days||typeof raw.days!=='object'||Array.isArray(raw.days))throw Error('invalid');
+ const out=fresh();
+ for(const [day,groups] of Object.entries(raw.days)){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!groups||typeof groups!=='object')continue;
+  const clean={};
+  for(const [id,index] of Object.entries(groups)){if(byId[id]&&Number.isInteger(index)&&index>=0&&index<byId[id].options.length)clean[id]=index;}
+  if(Object.keys(clean).length)out.days[day]=clean;
+ }
+ const p=raw.prefs||{};
+ out.prefs={gymDays:Array.isArray(p.gymDays)?[...new Set(p.gymDays.filter(d=>Number.isInteger(d)&&d>=0&&d<=6))]:[],gymStart:validTime(p.gymStart)?p.gymStart:'',gymEnd:validTime(p.gymEnd)?p.gymEnd:'',bedtime:validTime(p.bedtime)?p.bedtime:''};
+ return out;
+}
+function storageFailure(damaged=false){storageOK=false;corrupt=damaged||corrupt;}
+function read(){try{const raw=localStorage.getItem(KEY);if(raw===null)return fresh();try{return normalize(JSON.parse(raw));}catch(e){storageFailure(true);return null;}}catch(e){storageFailure();return null;}}
+let state=read()||fresh();
+function warn(){
+ $('storage-warning').hidden=storageOK;
+ $('storage-warning').textContent=corrupt?'سابقه ذخیره‌شده قابل خواندن نیست. برای اینکه داده قبلی بازنویسی نشود، تغییرات فعلاً فقط در همین تب نگه داشته می‌شوند. نسخه پشتیبان را دریافت کن.':'مرورگر اجازه ذخیره‌سازی پایدار را نداده است. تیک‌ها فعلاً فقط در همین تب می‌مانند؛ قبل از بستن صفحه نسخه پشتیبان بگیر.';
+ $('save-status').textContent=storageOK?'ثبت‌ها در همین مرورگر نگه داشته می‌شوند.':'ذخیره دائمی فعال نیست؛ تغییرات این تب موقتی هستند.';
+}
+function commit(mutator){
+ if(storageOK){const latest=read();if(latest)state=latest;}
+ mutator(state);
+ if(storageOK)try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageFailure();}
+ warn();return storageOK;
+}
+function notify(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>{$('toast').hidden=true;},4200);}
+function dayKey(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function dayAt(d,offset=0){return new Date(d.getFullYear(),d.getMonth(),d.getDate()+offset);}
+function minutes(s){const [h,m]=s.split(':').map(Number);return h*60+m;}
+function at(d,m){const n=dayAt(d);n.setMinutes(m);return n;}
+function selected(g){const i=state.days[g.day]?.[g.id];return Number.isInteger(i)?i:null;}
+function tally(id,index){let total=0;for(const groups of Object.values(state.days))if(groups[id]===index)total++;return total;}
+function keyOf(g){return g.day+'_'+g.id;}
+function targetOf(g){return 'meal-'+keyOf(g);}
+function gymFor(d){
+ const p=state.prefs;if(!p.gymDays.includes(d.getDay())||!validTime(p.gymStart)||!validTime(p.gymEnd))return [];
+ const start=at(d,minutes(p.gymStart));let end=at(d,minutes(p.gymEnd));if(end<=start)end=at(d,minutes(p.gymEnd)+1440);
+ return GYM.map((g,i)=>({...g,day:dayKey(d),at:i?new Date(+end+30*60000):new Date(+start-30*60000),until:i?new Date(+end+60*60000):new Date(+start-30*60000),exact:!i,gym:true}));
+}
+function baseFor(d){return BASE.map(g=>{const x={...g,day:dayKey(d)};if(g.start!==undefined){x.at=at(d,g.start);x.until=at(d,g.end);x.exact=g.start===g.end;}if(g.id==='bed'&&validTime(state.prefs.bedtime)){x.at=at(d,minutes(state.prefs.bedtime));x.until=x.at;x.exact=true;x.custom=true;}return x;});}
+function groupsFor(d){
+ const key=dayKey(d),base=baseFor(d),gyms=[];
+ for(let offset=-1;offset<=1;offset++)for(const g of gymFor(dayAt(d,offset))){if(g.day===key||dayKey(g.at)===key||dayKey(g.until)===key)gyms.push(g);}
+ const timed=[...base.filter(g=>g.at),...gyms].sort((a,b)=>+a.at-+b.at);
+ const untimed=base.filter(g=>!g.at&&g.id!=='pre');
+ if(!gyms.some(g=>g.day===key)){for(const g of GYM)untimed.push({...g,day:key,gym:true,unscheduled:true});}
+ return [base.find(g=>g.id==='pre'),...timed,...untimed];
+}
+function timeLabel(g){
+ if(!g.at)return g.when+(g.unscheduled?' · زمان‌بندی نشده':'');
+ if(g.gym){const stamp=clockFormat.format(g.at)+(g.exact?'':' تا '+clockFormat.format(g.until));const other=g.day!==dayKey(new Date())?' · مربوط به تمرین '+dateFormat.format(new Date(g.day+'T12:00:00')):'';const atDay=dayKey(g.at)!==dayKey(new Date())?' · '+dateFormat.format(g.at):'';return g.when+' · '+stamp+atDay+other;}
+ if(g.custom)return 'یادآوری انتخابی تو: '+clockFormat.format(g.at);
+ return g.when;
+}
+function node(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+function renderPlan(){
+ const now=new Date();displayDay=dayKey(now);displayGroups=groupsFor(now);
+ $('meals').replaceChildren();
+ for(const g of displayGroups){
+  const section=node('section','meal'+(g.id==='pre'?' prerequisite':''));section.id=targetOf(g);section.setAttribute('aria-labelledby',section.id+'-title');
+  const heading=node('div','meal-heading'),title=node('h3','',g.title);title.id=section.id+'-title';heading.append(title,node('p','meal-time',timeLabel(g)),node('p','meal-status'));
+  const body=node('div','meal-body');
+  if(g.note)body.append(node('p','common',g.note));
+  if(g.unscheduled)body.append(node('p','common','روز و ساعت تمرین مشخص نیست. این وعده فقط برای روز باشگاه است؛ در تنظیمات، زمان تمرینت را وارد کن.'));
+  const list=node('ul','options');
+  g.options.forEach((o,index)=>{
+   const li=node('li','option');li.dataset.index=String(index);
+   const label=node('label'),input=document.createElement('input');input.type='checkbox';input.id=section.id+'-option-'+index;input.setAttribute('aria-label','ثبت مصرف '+g.title+'، '+o[0]);input.addEventListener('change',()=>toggle(g,index,input.checked));
+   const copy=node('span','option-copy');copy.append(node('span','option-title',o[0]),node('span','option-text',o[1]));
+   const count=node('span','count');label.append(input,copy,count);li.append(label);list.append(li);
+  });
+  body.append(list);
+  if(['breakfast','lunch','dinner'].includes(g.id)){const after=node('p','after-meal','یادآوری فایل: بلافاصله بعد از غذا ۱ عدد خرما یا ماده غذایی حاوی خرما مصرف کن؛ همراه غذا نان هم مصرف شود.');after.hidden=true;body.append(after);}
+  section.append(heading,body);$('meals').append(section);
+ }
+ syncRows();updateNow();
+}
+function syncRows(animateKey=null){
+ for(const g of displayGroups){
+  const section=$(targetOf(g));if(!section)continue;
+  const list=section.querySelector('.options'),items=[...list.children],chosen=selected(g);
+  const animate=animateKey===keyOf(g)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const old=new Map(items.map(li=>[li,li.getBoundingClientRect().top]));
+  for(const li of items){const i=Number(li.dataset.index);li.classList.toggle('done',i===chosen);li.querySelector('input').checked=i===chosen;const n=tally(g.id,i);li.querySelector('.count').textContent=fa.format(n)+' بار';li.querySelector('.count').setAttribute('aria-label',fa.format(n)+' بار مصرف ثبت‌شده در کل سابقه');}
+  const focus=document.activeElement;
+  items.sort((a,b)=>{const ai=Number(a.dataset.index),bi=Number(b.dataset.index);return Number(ai===chosen)-Number(bi===chosen)||ai-bi;}).forEach(li=>list.append(li));
+  if(focus&&list.contains(focus)&&document.activeElement!==focus)focus.focus({preventScroll:true});
+  if(animate)for(const li of items){const delta=old.get(li)-li.getBoundingClientRect().top;if(delta&&li.animate)li.animate([{transform:'translateY('+delta+'px)'},{transform:'translateY(0)'}],{duration:380,easing:'cubic-bezier(.22,1,.36,1)'});}
+  section.querySelector('.meal-status').textContent=chosen===null?'هنوز ثبت نشده':'ثبت شد · '+g.options[chosen][0];
+  const after=section.querySelector('.after-meal');if(after)after.hidden=chosen===null;
+ }
+ updateProgress();
+}
+function toggle(g,index,checked){
+ const now=new Date();if(dayKey(now)!==displayDay){renderPlan();notify('روز جدید شروع شده؛ تیک را برای برنامه امروز دوباره بزن.');return;}
+ const saved=commit(s=>{if(!s.days[g.day])s.days[g.day]={};if(checked)s.days[g.day][g.id]=index;else if(s.days[g.day][g.id]===index)delete s.days[g.day][g.id];if(!Object.keys(s.days[g.day]).length)delete s.days[g.day];});
+ syncRows(keyOf(g));updateNow();
+ notify((checked?'مصرف این گزینه ثبت شد.':'ثبت این گزینه برداشته شد.')+(saved?'':' ذخیره دائمی فعال نیست.'));
+}
+function resetToday(){
+ const today=dayKey(new Date());
+ if(!state.days[today]){notify('برای امروز ثبت فعالی وجود ندارد.');return;}
+ const saved=commit(s=>{delete s.days[today];});
+ syncRows();updateNow();
+ notify((saved?'ثبت‌های امروز پاک شد؛ سابقه روزهای قبل باقی ماند.':'ثبت‌های امروز فقط در همین تب پاک شد.')+(saved?'':' ذخیره دائمی فعال نیست.'));
+}
+function updateProgress(){
+ const groups=displayGroups.filter(g=>g.day===displayDay&&(!g.unscheduled||selected(g)!==null));
+ const done=groups.filter(g=>selected(g)!==null).length;
+ $('progress').max=groups.length;$('progress').value=done;$('progress-label').textContent=fa.format(done)+' از '+fa.format(groups.length)+' وعده و دستور امروز ثبت شده';
+}
+function isDue(g,now){
+ if(!g.at)return false;
+ if(g.id==='breakfast')return +now>=+g.at&&+now<+at(now,540);
+ if(g.custom)return dayKey(now)===g.day&&+now>=+g.at;
+ if(g.exact)return Math.floor(+now/60000)===Math.floor(+g.at/60000);
+ return +now>=+g.at&&Math.floor(+now/60000)<=Math.floor(+g.until/60000);
+}
+function updateNow(){
+ const now=new Date();if(dayKey(now)!==displayDay){renderPlan();return;}
+ $('today').textContent=dateFormat.format(now);$('clock').textContent=clockFormat.format(now);$('clock').dateTime=now.toISOString();
+ const m=now.getHours()*60+now.getMinutes(),pre=displayGroups.find(g=>g.id==='pre'),breakfast=displayGroups.find(g=>g.id==='breakfast');
+ let title='',note='',target=null,alert=false;
+ const due=displayGroups.filter(g=>isDue(g,now));const pending=due.filter(g=>selected(g)===null).sort((a,b)=>Number(!!b.gym)-Number(!!a.gym)||+a.until-+b.until);
+ if(pre&&selected(pre)===null&&selected(breakfast)===null&&m<540&&!(pending[0]?.gym)){
+  title=m<480?'پیش از صبحانه، این نوشیدنی را بخور.':'قبل از صبحانه، نوشیدنی‌ات یادت نرود.';note=PRE+' در فایل، ساعت جداگانه‌ای برای این دستور تعیین نشده است.';target=pre;alert=true;
+ }else if(pending.length){
+  target=pending[0];
+  title=target.id==='breakfast'&&m>480?'صبحانه هنوز ثبت نشده.':target.id==='gympre'?'وقت وعده پیش از تمرین است.':target.id==='gympost'?'وقت وعده بعد از تمرین است.':target.id==='bed'?'وقت یادآوری پیش از خواب است.':'وقت '+target.title+' است.';
+  note=target.options.length===1?target.options[0][1]:'یکی از منوهای این وعده را انتخاب کن.';
+  if(target.note)note+=' '+target.note;
+  if(pending.length>1)note+=' '+pending.slice(1).map(g=>g.title).join(' و ')+' هم در بازه فعلی است؛ در برنامه پایین می‌بینی.';
+ }else{
+  const future=[];for(let offset=0;offset<=1;offset++)for(const g of groupsFor(dayAt(now,offset)))if(g.at&&+g.at>+now&&selected(g)===null)future.push(g);
+  future.sort((a,b)=>+a.at-+b.at);
+  const next=future[0],hasBed=displayGroups.find(g=>g.id==='bed'&&!g.at&&selected(g)===null);
+  if(due.length){title=due.length===1?due[0].title+' ثبت شده؛ تمام.':'وعده‌های این بازه ثبت شده‌اند.';}
+  else title='الان وعده زمان‌دارِ ثبت‌نشده‌ای نداری.';
+  if(next){const tomorrow=dayKey(next.at)!==displayDay;note='وعده بعدی: '+next.title+'، '+(tomorrow?'فردا ':'')+'ساعت '+clockFormat.format(next.at)+'.';if(!tomorrow)target=displayGroups.find(g=>keyOf(g)===keyOf(next));}
+  if(hasBed&&m>1260)note+=' میان‌وعده قبل خواب را هم داری؛ زمان آن در نسخه مشخص نشده، پس این پیام به معنی مصرف همین حالا نیست.';
+  if(!next)note='وعده‌های بدون ساعت را در برنامه کامل ببین.';
+ }
+ $('hero-action').textContent=title;$('hero-note').textContent=note;$('hero-note').classList.toggle('alert',alert);
+ const link=$('current-link');link.hidden=!target;link.href=target?'#'+targetOf(target):'#plan';link.textContent=target?(alert?'دیدن دستور':target.at&&+target.at>+now?'دیدن وعده بعدی':'دیدن '+target.title):'دیدن وعده';
+ currentIDs=[...due.map(keyOf),...(alert&&pre?[keyOf(pre)]:[])];
+ for(const g of displayGroups)$(targetOf(g))?.classList.toggle('current',currentIDs.includes(keyOf(g)));
+}
+function renderSettings(){
+ const names=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];$('gym-days').replaceChildren();
+ for(const i of [6,0,1,2,3,4,5]){const label=node('label','day'),input=document.createElement('input');input.type='checkbox';input.name='gym-day';input.value=String(i);input.checked=state.prefs.gymDays.includes(i);input.addEventListener('change',requirements);label.append(input,document.createTextNode(names[i]));$('gym-days').append(label);}
+ $('gym-start').value=state.prefs.gymStart;$('gym-end').value=state.prefs.gymEnd;$('bedtime').value=state.prefs.bedtime;requirements();
+}
+function requirements(){const required=!!document.querySelector('input[name="gym-day"]:checked');$('gym-start').required=required;$('gym-end').required=required;$('gym-end').setCustomValidity('');}
+$('gym-end').addEventListener('input',()=>{$('gym-end').setCustomValidity('');});$('gym-start').addEventListener('input',()=>{$('gym-end').setCustomValidity('');});
+$('settings-form').addEventListener('submit',e=>{
+ e.preventDefault();const days=[...document.querySelectorAll('input[name="gym-day"]:checked')].map(x=>Number(x.value));
+ if(days.length&&$('gym-start').value===$('gym-end').value){$('gym-end').setCustomValidity('ساعت شروع و پایان تمرین نباید یکسان باشد.');$('gym-end').reportValidity();return;}
+ const saved=commit(s=>{s.prefs={gymDays:days,gymStart:$('gym-start').value,gymEnd:$('gym-end').value,bedtime:$('bedtime').value};});
+ $('settings-message').textContent=saved?'زمان‌بندی ذخیره شد.':'زمان‌بندی فقط در همین تب اعمال شد؛ ذخیره دائمی فعال نیست.';renderPlan();
+});
+$('reset-day').addEventListener('click',resetToday);
+function renderUnits(){
+ for(const [index,g] of UNIT_GROUPS.entries()){
+  const details=node('details','unit-group');details.dataset.group=String(index);details.append(node('summary','',g.title));
+  const wrap=node('div','table-wrap'),table=document.createElement('table');const caption=node('caption','',g.title+'؛ مقدار معادل یک واحد');caption.style.textAlign='right';caption.style.padding='8px 12px';table.append(caption);
+  const head=document.createElement('thead'),hr=document.createElement('tr');for(const text of ['ماده غذایی','مقدار معادل']){const th=node('th','',text);th.scope='col';hr.append(th);}head.append(hr);table.append(head);
+  const body=document.createElement('tbody');for(const row of g.rows){const tr=document.createElement('tr');tr.dataset.search=norm(row.join(' '));tr.append(node('td','',row[0]),node('td','',row[1]));body.append(tr);}table.append(body);wrap.append(table);details.append(wrap);
+  if(g.note)details.append(node('p','unit-note',g.note));$('unit-tables').append(details);
+ }
+ for(const text of ADVICE)$('advice-list').append(node('li','',text));
+}
+function norm(s){return s.toLowerCase().replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/[\u200c\u200f\u200e]/g,' ').replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).replace(/[٠-٩]/g,d=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(d))).replace(/\s+/g,' ').trim();}
+let beforeSearch=null;
+$('unit-search').addEventListener('input',()=>{
+ const q=norm($('unit-search').value),groups=[...document.querySelectorAll('.unit-group')];if(q&&beforeSearch===null)beforeSearch=groups.map(g=>g.open);let total=0;
+ for(const [index,g] of groups.entries()){let matches=0;const titleMatch=q&&norm(UNIT_GROUPS[index].title).includes(q);for(const row of g.querySelectorAll('tbody tr')){const hit=!q||titleMatch||q.split(' ').every(t=>row.dataset.search.includes(t));row.hidden=!hit;if(hit)matches++;}g.hidden=matches===0;if(q)g.open=matches>0;else if(beforeSearch)g.open=beforeSearch[index];total+=matches;}
+ if(!q)beforeSearch=null;$('search-status').hidden=!q;$('search-status').textContent=total?fa.format(total)+' ردیف پیدا شد.':'موردی پیدا نشد؛ نام کوتاه‌تر غذا را جست‌وجو کن.';
+});
+$('export').addEventListener('click',()=>{
+ const payload={...state,exportedAt:new Date().toISOString()};
+ if(corrupt)try{payload.unreadableOriginal=localStorage.getItem(KEY);}catch(e){}
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='nutrition-backup-'+dayKey(new Date())+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('نسخه پشتیبان برای دانلود آماده شد.');
+});
+window.addEventListener('storage',e=>{if(e.key!==KEY&&e.key!==null)return;if(!storageOK)return;const latest=read();if(latest){state=latest;renderSettings();renderPlan();}warn();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(storageOK){const latest=read();if(latest)state=latest;}if(dayKey(new Date())!==displayDay)renderPlan();else{syncRows();updateNow();}warn();}});
+window.addEventListener('pageshow',()=>{updateNow();});
+let printDetails=[];window.addEventListener('beforeprint',()=>{printDetails=[...document.querySelectorAll('#units details,#advice details')].map(d=>[d,d.open]);for(const [d] of printDetails)d.open=true;});window.addEventListener('afterprint',()=>{for(const [d,open] of printDetails)d.open=open;});
+if(storageOK)try{const probe=KEY+'-probe';localStorage.setItem(probe,'1');localStorage.removeItem(probe);}catch(e){storageFailure();}
+renderSettings();renderUnits();renderPlan();warn();setInterval(updateNow,15000);
+</script>
+</body>
+</html>
